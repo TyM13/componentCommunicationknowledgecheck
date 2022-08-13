@@ -1,28 +1,43 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+
+  <small-user-profile v-for="user_obj in users" :key="user_obj[`id`]" :user="user_obj"></small-user-profile>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import SmallUserProfile from '@/components/SmallUserProfile.vue'
 
 export default {
+
+  data() {
+    return {
+      users: [
+        {
+          name: `Ty`,
+          age: 25,
+          is_premium: true,
+          id: 1,
+        },
+        {
+          name: `Tyler`,
+          age: 20,
+          is_premium: false,
+          id: 4,
+        },
+      ],
+    };
+  },
+
   name: 'App',
   components: {
-    HelloWorld
+ SmallUserProfile,
   }
+
+  
 }
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+
 </style>
