@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <h1></h1>
     <small-user-profile
       v-for="user_obj in users"
       :key="user_obj[`id`]"
@@ -14,7 +15,10 @@ import SmallUserProfile from "@/components/SmallUserProfile.vue";
 
 export default {
   methods: {
-    show_username(user_obj) {},
+    show_username(user) {
+
+      this. = user[`name`];
+    },
   },
 
   data() {

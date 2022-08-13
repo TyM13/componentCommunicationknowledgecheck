@@ -1,7 +1,7 @@
 <template>
   <div>
     <section>
-      <button @click="show_name">CLick Me</button>
+      <button @click="selection">CLick Me</button>
     </section>
     <h3>{{ user[`name`] }}</h3>
     <p>{{ user[`age`] }}</p>
@@ -12,8 +12,8 @@
 <script>
 export default {
   methods: {
-    show_name() {
-      this.$emit(`user_clicked`, this.post);
+    selection() {
+      this.$emit(`user_clicked`, this.user[`name`]);
     },
   },
 
