@@ -1,14 +1,21 @@
 <template>
   <div id="app">
-
-  <small-user-profile v-for="user_obj in users" :key="user_obj[`id`]" :user="user_obj"></small-user-profile>
+    <small-user-profile
+      v-for="user_obj in users"
+      :key="user_obj[`id`]"
+      :user="user_obj"
+      @user_clicked="show_username"
+    ></small-user-profile>
   </div>
 </template>
 
 <script>
-import SmallUserProfile from '@/components/SmallUserProfile.vue'
+import SmallUserProfile from "@/components/SmallUserProfile.vue";
 
 export default {
+  methods: {
+    show_username(user_obj) {},
+  },
 
   data() {
     return {
@@ -29,15 +36,12 @@ export default {
     };
   },
 
-  name: 'App',
+  name: "App",
   components: {
- SmallUserProfile,
-  }
-
-  
-}
+    SmallUserProfile,
+  },
+};
 </script>
 
 <style>
-
 </style>

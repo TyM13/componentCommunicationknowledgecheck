@@ -1,18 +1,25 @@
 <template>
   <div>
-    <h3>{{user[`name`]}}</h3>
-    <p>{{user[`age`]}}</p>
-    <p>is premium {{user[`is_premium`]}}</p>
+    <section>
+      <button @click="show_name">CLick Me</button>
+    </section>
+    <h3>{{ user[`name`] }}</h3>
+    <p>{{ user[`age`] }}</p>
+    <p>is premium {{ user[`is_premium`] }}</p>
   </div>
 </template>
 
 <script>
 export default {
-props: {
-  user: Object,
+  methods: {
+    show_name() {
+      this.$emit(`user_clicked`, this.post);
+    },
+  },
 
-  
-},
+  props: {
+    user: Object,
+  },
 };
 </script>
 
